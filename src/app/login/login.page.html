@@ -1,0 +1,37 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title style="text-align: end;">Login</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="ion-text-center">
+    <ion-card class="ion-text-center">
+        <img src="https://media1.tenor.com/m/9C0WDOq8jSUAAAAC/gengar-pokemon.gif" />
+        <div class="image-text">
+            Bienvenido
+        </div>
+        <form (ngSubmit)="login()" style="display: flex; flex-direction: column; align-items: center;">
+            <ion-item style="width: 80%;">
+                <ion-label>Correo electrónico</ion-label>
+                <ion-input type="email" [(ngModel)]="email" name="email" pattern="^[A-Za-z0-9._%+-]+@utcv\.edu\.mx$" #emailField="ngModel"></ion-input>
+            </ion-item>
+            <p *ngIf="emailField.errors && (emailField.errors['pattern'] || emailField.errors['required'])">Debe ingresar un correo válido con la terminación &commat;utcv.edu.mx</p>
+
+            <ion-item style="width: 80%;">
+                <ion-label>Contraseña</ion-label>
+                <ion-input type="password" [(ngModel)]="password" name="password" minlength="8" maxlength="12" #passwordField="ngModel"></ion-input>
+            </ion-item>
+            <p *ngIf="passwordField.errors && (passwordField.errors['minlength'] || passwordField.errors['maxlength'] || passwordField.errors['required'])">La contraseña debe tener entre 8 y 12 caracteres.</p>
+            <ion-row style="width: 80%;">
+                <ion-col size="12" size-md="6">
+                    <ion-button color="danger" expand="block" (click)="login()">Iniciar Sesión</ion-button>
+                    <p *ngIf="formIncomplete">Se requiere llenar los campos primero</p>
+                </ion-col>
+                <ion-col size="12" size-md="6" class="ion-text-center ion-padding-top">
+                    <ion-button type="button" color="danger" expand="block">Registrarse</ion-button>
+                </ion-col>
+            </ion-row>
+            <a [routerLink]="['/forgot-password']" class="small-text">¿Olvidó su contraseña?</a>
+        </form>
+    </ion-card>
+</ion-content>

@@ -1,0 +1,126 @@
+<ion-menu contentId="main-content">
+    <ion-header>
+        <ion-toolbar>
+        </ion-toolbar>
+    </ion-header>
+
+    <ion-content class="ion-padding">
+        <ion-list>
+
+            <ion-item routerLink="/perfilU">
+                <ion-icon name="person" slot="start"></ion-icon>
+                <ion-label>Perfil</ion-label>
+            </ion-item>
+            <ion-item routerLink="/home">
+                <ion-icon name="Home" slot="start"></ion-icon>
+                <ion-label>Pokemones</ion-label>
+            </ion-item>
+            <ion-item routerLink="/favorites">
+                <ion-icon name="Star" slot="start"></ion-icon>
+                <ion-label>PokemonesFav</ion-label>
+            </ion-item>
+            <ion-item routerLink="/portada">
+                <ion-icon name="exit" slot="start"></ion-icon>
+                <ion-label>Salir</ion-label>
+            </ion-item>
+            <ion-item routerLink="/perfil">
+                <ion-icon name="information" slot="start"></ion-icon>
+                <ion-label>InfoUsuario</ion-label>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+
+<div class="ion-page" id="main-content">
+    <ion-header>
+        <ion-toolbar color="warning">
+            <ion-buttons slot="start">
+                <ion-menu-button></ion-menu-button>
+            </ion-buttons>
+        </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+        <ion-card>
+            <ion-card-header>
+                <ion-card-subtitle> Ash Ketchum.</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content style="display: flex; justify-content: flex-end; align-items: center;">
+
+                <div style="margin-right: 10px;">
+                    Ash Ketchum es un joven entrenador Pokémon de 10 años de edad de Pueblo Paleta. Sueña con convertirse en el mejor Maestro Pokémon del mundo </div>
+
+                <div>
+
+                    <img src="https://th.bing.com/th/id/OIP.GNnhMHAY28dnUMp9UST8zQAAAA?rs=1&pid=ImgDetMain" class="centered-image" width="500px" />
+                </div>
+
+            </ion-card-content>
+        </ion-card>
+
+
+
+        <ion-card>
+            <ion-card-header>
+                <ion-card-title> </ion-card-title>
+                <ion-card-subtitle>Pokémones encontrados:</ion-card-subtitle>
+            </ion-card-header>
+
+            <ion-card-content>
+                <img src="https://th.bing.com/th/id/R.dd450e594c141c2440a756f30e17ebfb?rik=nK6EJy6yftnxvg&riu=http%3a%2f%2fpa1.narvii.com%2f6350%2f341bed1d228bbf0314be2b1ab4a59ababbac3e2e_hq.gif&ehk=hyuN3OafPotZNZt89eYVX9C5vQn%2b527BJoGtKpsfzxs%3d&risl=&pid=ImgRaw&r=0"
+                    class="centered-image" />
+
+            </ion-card-content>
+
+            <ion-item>
+                <ion-button type="submit" color="danger" expand="block" slot="end" size="default" routerLink="/home">Ir</ion-button>
+            </ion-item>
+        </ion-card>
+
+
+
+        <ion-card>
+            <ion-card-content>
+                <ion-item lines="none">
+                    <ion-thumbnail slot="start">
+                        <img src="https://media.tenor.com/FuseZorJLZIAAAAi/pikapikapika.gif" class="centered-image" />
+                    </ion-thumbnail>
+                    <ion-label>
+                        <ion-card-subtitle>Último Pokémon registrado:</ion-card-subtitle>
+                        <ion-card-subtitle>Pikachu</ion-card-subtitle>
+
+                        <p>Cuando se enfada, este Pokémon descarga la energía que almacena en el interior de las bolsas de las mejillas. </p>
+                    </ion-label>
+
+                </ion-item>
+            </ion-card-content>
+        </ion-card>
+
+
+        <ion-card>
+            <ion-item>
+                <ion-thumbnail slot="start">
+                    <img src="https://media1.tenor.com/m/11zhnLijzrcAAAAC/evee-evelotion.gif" class="centered-image" />
+                </ion-thumbnail>
+                <ion-label>Mi Pokemon Favorito</ion-label>
+                <ion-button type="submit" color="danger" expand="block" slot="end" size="default" routerLink="/favorites">Ir</ion-button>
+            </ion-item>
+        </ion-card>
+    </ion-content>
+
+    <ion-footer [translucent]="true">
+        <ion-toolbar>
+            <ion-tabs>
+                <ion-tab-bar class="TabBar" slot="bottom">
+                    <ion-tab-button tab="tab1" routerLink="/menu">
+                        <ion-icon name="person"></ion-icon>
+                    </ion-tab-button>
+                    <ion-tab-button tab="tab2" routerLink="/home">
+                        <ion-icon name="home"></ion-icon>
+                    </ion-tab-button>
+                    <ion-tab-button tab="tab3" routerLink="/portada">
+                        <ion-icon name="exit"></ion-icon>
+                    </ion-tab-button>
+                </ion-tab-bar>
+            </ion-tabs>
+        </ion-toolbar>
+    </ion-footer>

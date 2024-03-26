@@ -1,0 +1,48 @@
+<ion-header [translucent]="true">
+    <ion-toolbar color="danger">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/menu"></ion-back-button>
+        </ion-buttons>
+        <ion-title class="ion-text-center">
+            <!-- No funciona -->
+            <ion-searchbar (ionChange)="search($event)" (keypress)="handleKeyPress($event)" placeholder="Buscar Pokémon"></ion-searchbar>
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <ion-grid>
+        <ion-row>
+            <ion-col size="12" size-md="6" size-lg="4" size-xl="3" *ngFor="let pokemon of pokemons; let i = index">
+                <ion-card button (click)="showPokemon(i + 1)">
+                    <ion-card-header>
+                        <!-- Asegúrate de que pokemon.sprites está definido antes de intentar acceder a pokemon.sprites.front_default -->
+                        <img *ngIf="pokemon.sprites" style="height: 150px;" [src]="pokemon.sprites.front_default" alt="{{ pokemon.name }}">
+                        <ion-card-title class="centered-text">{{ pokemon.name }}</ion-card-title>
+                        <ion-button fill="clear" (click)="likePokemon(i, $event)">
+                            <ion-icon [name]="likes[i] ? 'heart' : 'heart-outline'" [color]="likes[i] ? 'danger' : 'medium'"></ion-icon>
+                        </ion-button>
+                    </ion-card-header>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
+
+<ion-footer [translucent]="true">
+    <ion-toolbar>
+        <ion-tabs>
+            <ion-tab-bar class="TabBar" slot="bottom">
+                <ion-tab-button tab="tab1" routerLink="/menu">
+                    <ion-icon name="person"></ion-icon>
+                </ion-tab-button>
+                <ion-tab-button tab="tab2" routerLink="/home">
+                    <ion-icon name="home"></ion-icon>
+                </ion-tab-button>
+                <ion-tab-button tab="tab3" routerLink="/portada">
+                    <ion-icon name="exit"></ion-icon>
+                </ion-tab-button>
+            </ion-tab-bar>
+        </ion-tabs>
+    </ion-toolbar>
+</ion-footer>

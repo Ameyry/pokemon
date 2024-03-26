@@ -1,0 +1,9 @@
+
+#
+GET https://pokeapi.co/api/v2/pokemon/5/encounters
+#
+
+#
+GET https://pokeapi.co/api/v2/pokemon?offset=0&limit=1000000
+#
+

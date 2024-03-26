@@ -1,0 +1,24 @@
+ion-tab-bar.TabBar {
+    border-radius: 20px;
+    --background: rgb(250, 250, 247);
+    justify-content: space-around;
+    /* Distribuye equitativamente el espacio entre los botones */
+}
+
+ion-tab-bar.TabBar {
+    ion-tab-button {
+        ion-icon {
+            color: rgb(84, 78, 78);
+            font-size: 20px;
+            /* Aumentar el tamaño del icon */
+        }
+    }
+}
+
+ion-tab-button {
+    display: flex;
+    justify-content: center;
+    /* Centra el contenido horizontalmente */
+    align-items: center;
+    /* Centra el contenido verticalmente */
+}
